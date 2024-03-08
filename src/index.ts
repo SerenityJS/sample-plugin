@@ -1,27 +1,35 @@
-import type { Logger, Serenity } from '@serenityjs/serenity';
+import type { Logger, PlayerSpawned, Serenity } from '@serenityjs/serenity';
+import { BasePlugin } from '@serenityjs/serenity';
 
-export default class SamplePlugin {
-  /**
-   * The Serenity instance.
-  */
-	public readonly serenity: Serenity;
-
-  /**
-   * The logger instance.
-   */
-	public readonly logger: Logger;
-
-  /**
-   * Creates a new instance of the plugin.
-   *
-   * @param serenity The Serenity instance.
-   * @param logger The logger instance.
-   */
+/**
+ * Sample plugin for the Serenity server.
+ */
+export default class SamplePlugin extends BasePlugin {
+	// The constructor is not required, as it is inherited from the BasePlugin class.
 	public constructor(serenity: Serenity, logger: Logger) {
-		this.serenity = serenity;
-		this.logger = logger;
+		super(serenity, logger);
 
-    // Log a message to the console.
-		this.logger.info('Hello world from the sample plugin!');
+		// Listen to the PlayerSpawned event.
+		this.serenity.before('PlayerSpawned', this.onPlayerSpawned.bind(this));
+	}
+
+	// Fires when the plugin is started.
+	public startup(): void {
+		this.logger.info('Sample plugin has started!');
+	}
+
+	// Fires when the plugin is stopped.
+	public shutdown(): void {
+		this.logger.info('Sample plugin has stopped!');
+	}
+
+	// Fires when a player sends a chat message.
+	protected onPlayerSpawned(event: PlayerSpawned): boolean {
+		// Send a welcome message to the player.
+		event.player.sendMessage('Welcome to the server!');
+
+		// Allow the event to continue.
+		// If false, the event will be cancelled.
+		return true;
 	}
 }

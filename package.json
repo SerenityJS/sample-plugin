@@ -6,6 +6,7 @@
 	"main": "dist/index.js",
 	"repository": "https://github.com/SerenityJS/sample-plugin.git",
 	"author": "SerenityJS",
+	"development": true,
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc"
@@ -13,5 +14,8 @@
 	"devDependencies": {
 		"ts-node": "^10.9.2",
 		"typescript": "^5.4.2"
+	},
+	"dependencies": {
+		"@serenityjs/serenity": "file:../../packages/serenity"
 	}
 }

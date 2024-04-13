@@ -16,15 +16,15 @@
 		"typescript": "^5.4.2"
 	},
 	"dependencies": {
-		"@serenityjs/block": "^0.1.0-beta.8",
-		"@serenityjs/command": "^0.1.0-beta.8",
-		"@serenityjs/entity": "^0.1.0-beta.5",
-		"@serenityjs/item": "^0.1.0-beta.8",
-		"@serenityjs/logger": "^0.1.0-beta.8",
-		"@serenityjs/nbt": "^0.1.0-beta.8",
-		"@serenityjs/plugins": "^0.1.0-beta.8",
-		"@serenityjs/protocol": "^0.1.0-beta.8",
-		"@serenityjs/world": "^0.1.0-beta.8",
-		"launcher": "file:../.."
+		"@serenityjs/block": "^0.1.0-beta.9",
+		"@serenityjs/command": "^0.1.0-beta.9",
+		"@serenityjs/entity": "^0.1.0-beta.9",
+		"@serenityjs/item": "^0.1.0-beta.9",
+		"@serenityjs/launcher": "^0.1.0-beta.9",
+		"@serenityjs/logger": "^0.1.0-beta.9",
+		"@serenityjs/nbt": "^0.1.0-beta.9",
+		"@serenityjs/plugins": "^0.1.0-beta.9",
+		"@serenityjs/protocol": "^0.1.0-beta.9",
+		"@serenityjs/world": "^0.1.0-beta.9"
 	}
 }

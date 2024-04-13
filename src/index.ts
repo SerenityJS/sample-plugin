@@ -4,7 +4,7 @@ import { ItemType } from "@serenityjs/item";
 import { Packet } from "@serenityjs/protocol";
 import { BlockIdentifier, BlockPermutation } from "@serenityjs/block";
 
-import type { Serenity } from "launcher";
+import type { Serenity } from "@serenityjs/launcher";
 import type { Logger } from "@serenityjs/logger";
 
 /**

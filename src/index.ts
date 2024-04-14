@@ -1,10 +1,14 @@
 import { BasePlugin } from "@serenityjs/plugins";
 import { ItemStack } from "@serenityjs/world";
 import { ItemType } from "@serenityjs/item";
-import { Packet } from "@serenityjs/protocol";
 import { BlockIdentifier, BlockPermutation } from "@serenityjs/block";
 
-import type { Serenity } from "@serenityjs/launcher";
+import type {
+	PlayerChatSignal,
+	PlayerJoinedSignal,
+	PlayerSpawnedSignal,
+	Serenity
+} from "@serenityjs/launcher";
 import type { Logger } from "@serenityjs/logger";
 
 /**
@@ -15,46 +19,61 @@ export default class SamplePlugin extends BasePlugin {
 	public constructor(serenity: Serenity, logger: Logger) {
 		super(serenity, logger);
 
-		// Log the plugin initialization.
-		logger.info("Sample plugin initialized.");
+		// The signal hooks for the plugin.
+		serenity.on("PlayerJoined", this.onJoin.bind(this));
+		serenity.on("PlayerSpawned", this.onSpawn.bind(this));
+		serenity.before("PlayerChat", this.onChat.bind(this));
+	}
 
-		// Since there are no events registered for Serenity yet, we will use the "before" method to listen for packets.
-		// This packet is sent when the local player is initialized. AKA the player spawned in the world.
-		serenity.network.before(Packet.SetLocalPlayerAsInitialized, (data) => {
-			// First we must get the player instance from the session.
-			// Which the Serenity instance provides.
-			const player = serenity.getPlayer(data.session);
+	public startup(): void {
+		// Log the plugin startup.
+		this.logger.info("Sample plugin started.");
+	}
 
-			// Check if the player is null and return false if it is.
-			if (!player) return false; // This will stop the packet from being processed.
+	// The event listener for the player join signal.
+	public onJoin(event: PlayerJoinedSignal): void {
+		// Log the player join event from the plugin.
+		this.logger.info(`${event.player.username} has joined the game.`);
+	}
 
-			// Now lets add some items to the player's inventory.
-			// We will give the player glowing obsidian.
+	// The event listener for the player spawned signal.
+	public onSpawn(event: PlayerSpawnedSignal): void {
+		// Lets add a glowing obsidian block to the player's inventory.
+		// First we must find the permutation for the block.
+		const permutation = BlockPermutation.resolve(
+			BlockIdentifier.Glowingobsidian
+		);
 
-			// First we must find the permutation for the block.
-			const permutation = BlockPermutation.resolve(
-				BlockIdentifier.Glowingobsidian
-			);
+		// Now we can create a new item stack with the block.
+		const item = ItemStack.create(
+			ItemType.resolve(permutation.type), // Item type from the block type.
+			1, // Item amount.
+			permutation.index // The item metadata, which is eqivalent to the permutation index.
+		);
 
-			// Now we can create a new item stack with the block.
-			const item = ItemStack.create(
-				ItemType.resolve(permutation.type), // Item type from the block type.
-				1, // Item amount.
-				permutation.index // The item metadata, which is eqivalent to the permutation index.
-			);
+		// Get the player's inventory component.
+		const inventory = event.player.getComponent("minecraft:inventory");
 
-			// Get the player's inventory component.
-			const inventory = player.getComponent("minecraft:inventory");
+		// Add the item to the inventory.
+		inventory.container.addItem(item);
 
-			// Add the item to the inventory.
-			inventory.container.addItem(item);
+		// Now lets let the player know that we have added the item to their inventory.
+		event.player.sendMessage("Added glowing obsidian to your inventory!");
 
-			// Now lets let the player know that we have added the item to their inventory.
-			player.sendMessage("Added glowing obsidian to your inventory!");
+		this.logger.info(
+			`Added glowing obsidian to the ${event.player.username}'s inventory.`
+		);
+	}
 
-			logger.info(
-				`Added glowing obsidian to the ${player.username}'s inventory.`
-			);
-		});
+	// The event listener for the player chat signal.
+	public onChat(event: PlayerChatSignal): boolean {
+		// Check if the player said "cancel", then cancel the chat event.
+		if (event.message === "cancel") return false;
+
+		// Add a prefix to the player's message.
+		event.message = `Plugin Did This: ${event.message}`;
+
+		// return true to continue the chat event.
+		return true;
 	}
 }

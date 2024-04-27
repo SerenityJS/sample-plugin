@@ -23,6 +23,16 @@ export default class SamplePlugin extends BasePlugin {
 		serenity.on("PlayerJoined", this.onJoin.bind(this));
 		serenity.on("PlayerSpawned", this.onSpawn.bind(this));
 		serenity.before("PlayerChat", this.onChat.bind(this));
+
+		// Command Registration
+		// Register the command "ping" with the plugin.
+		const world = serenity.getWorld(); // Gets the default world.
+		world.commands.register("ping", "Sample command for the plugin.", () => {
+			// Return the message "Pong!" when the command is executed.
+			return {
+				message: "Pong!"
+			}
+		});
 	}
 
 	public startup(): void {

@@ -1,14 +1,13 @@
 {
-	"development": true,
-	"private": true,
 	"name": "sample-plugin",
 	"version": "1.0.0",
+	"development": true,
+	"private": true,
 	"type": "module",
 	"description": "Sample plugin for SerenityJS",
 	"main": "dist/index.js",
 	"repository": "https://github.com/SerenityJS/sample-plugin.git",
 	"author": "SerenityJS",
-	"packageManager": "yarn@4.1.1",
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc"
@@ -19,16 +18,16 @@
 		"typescript": "^5.4.2"
 	},
 	"dependencies": {
-		"@serenityjs/block": "^0.2.1",
-		"@serenityjs/command": "^0.2.1",
-		"@serenityjs/entity": "^0.2.1",
-		"@serenityjs/item": "^0.2.1",
-		"@serenityjs/launcher": "^0.2.1",
-		"@serenityjs/logger": "^0.2.1",
-		"@serenityjs/nbt": "^0.2.1",
-		"@serenityjs/plugins": "^0.2.1",
-		"@serenityjs/protocol": "^0.2.1",
-		"@serenityjs/server-ui": "^0.2.1",
-		"@serenityjs/world": "^0.2.1"
+		"@serenityjs/block": "^0.2.2",
+		"@serenityjs/command": "^0.2.2",
+		"@serenityjs/entity": "^0.2.2",
+		"@serenityjs/item": "^0.2.2",
+		"@serenityjs/launcher": "^0.2.2",
+		"@serenityjs/logger": "^0.2.2",
+		"@serenityjs/nbt": "^0.2.2",
+		"@serenityjs/plugins": "^0.2.2",
+		"@serenityjs/protocol": "^0.2.2",
+		"@serenityjs/server-ui": "^0.2.2",
+		"@serenityjs/world": "^0.2.2"
 	}
 }

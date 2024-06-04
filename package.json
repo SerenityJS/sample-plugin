@@ -1,33 +1,16 @@
 {
-	"name": "sample-plugin",
-	"version": "1.0.0",
-	"development": true,
-	"private": true,
-	"type": "module",
-	"description": "Sample plugin for SerenityJS",
-	"main": "dist/index.js",
-	"repository": "https://github.com/SerenityJS/sample-plugin.git",
-	"author": "SerenityJS",
-	"license": "MIT",
-	"scripts": {
-		"build": "tsc"
-	},
-	"devDependencies": {
-		"@types/node": "^20.12.7",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.4.2"
-	},
-	"dependencies": {
-		"@serenityjs/block": "^0.2.2",
-		"@serenityjs/command": "^0.2.2",
-		"@serenityjs/entity": "^0.2.2",
-		"@serenityjs/item": "^0.2.2",
-		"@serenityjs/launcher": "^0.2.2",
-		"@serenityjs/logger": "^0.2.2",
-		"@serenityjs/nbt": "^0.2.2",
-		"@serenityjs/plugins": "^0.2.2",
-		"@serenityjs/protocol": "^0.2.2",
-		"@serenityjs/server-ui": "^0.2.2",
-		"@serenityjs/world": "^0.2.2"
-	}
+  "name": "sample-plugin",
+  "version": "1.0.0",
+  "description": "Sample plugin provides a basic configuration for plugin usage in the SerenityJS software. As documentation has not yet been created, you will have to refrence the SerenityJS source code found on the main repo.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "Sample",
+    "Example"
+  ],
+  "author": "SerenityJS",
+  "license": "MIT"
 }

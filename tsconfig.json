@@ -1,12 +1,10 @@
 {
-	"compilerOptions": {
-		"declaration": true,
-		"outDir": "./dist",
-		"target": "ES2022",
-		"lib": ["ES2022"],
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext"
-	
-	},
-	"include": ["src/**/*.ts"]
+  "extends": "@serenityjs/typescript-config/base.json",
+  "compilerOptions": {
+    "lib": ["es2022"],
+    "outDir": "./dist",
+    "types": ["node"]
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "dist"],
 }

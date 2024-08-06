@@ -1,4 +1,4 @@
-import type { Serenity } from "@serenityjs/launcher";
+import type { Serenity } from "@serenityjs/serenity";
 import type { Plugin } from "@serenityjs/plugins";
 
 /**

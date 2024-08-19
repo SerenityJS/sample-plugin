@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "mode": "development",
   "color": "blue",
-  "entry": "dist/index.js",
+  "entry": "dist/src/index.js",
   "node": true,
   "typescript": true
 }

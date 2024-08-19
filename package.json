@@ -3,7 +3,7 @@
   "version": "1.0.0",
 	"author": "SerenityJS",
   "description": "Sample plugin provides a basic configuration for plugin usage in the SerenityJS software. As documentation has not yet been created, you will have to refrence the SerenityJS source code found on the main repo.",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
 	"license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

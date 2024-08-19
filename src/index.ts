@@ -48,3 +48,6 @@ export function onShutdown(serenity: Serenity, data: Plugin): void {
 	// Log that the plugin has been stopped
 	logger.info("Plugin has been stopped!");
 }
+
+// Exporting additional data allows other plugins to use this data.
+export {};

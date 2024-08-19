@@ -28,12 +28,6 @@ export function onStartup(serenity: Serenity, data: Plugin): void {
 
 	// Log that the plugin has been started
 	logger.info("Plugin has been started!");
-
-	// Wait for a player to spawn in the world
-	serenity.on("PlayerSpawned", (event) => {
-		// Send a message to the player
-		event.player.sendMessage("Hello, world!");
-	})
 }
 
 /**

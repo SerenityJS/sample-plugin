@@ -1,10 +1,10 @@
 {
   "name": "sample-plugin",
   "version": "1.0.0",
-	"author": "SerenityJS",
+  "author": "SerenityJS",
   "description": "Sample plugin provides a basic configuration for plugin usage in the SerenityJS software. As documentation has not yet been created, you will have to refrence the SerenityJS source code found on the main repo.",
   "main": "dist/src/index.js",
-	"license": "MIT",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -12,5 +12,24 @@
   "keywords": [
     "Sample",
     "Example"
-  ]
+  ],
+  "peerDependencies": {
+    "@serenityjs/binarystream": "latest",
+    "@serenityjs/block": "latest",
+    "@serenityjs/command": "latest",
+    "@serenityjs/data": "latest",
+    "@serenityjs/emitter": "latest",
+    "@serenityjs/entity": "latest",
+    "@serenityjs/item": "latest",
+    "@serenityjs/logger": "latest",
+    "@serenityjs/nbt": "latest",
+    "@serenityjs/network": "latest",
+    "@serenityjs/plugins": "latest",
+    "@serenityjs/protocol": "latest",
+    "@serenityjs/raknet": "latest",
+    "@serenityjs/serenity": "latest",
+    "@serenityjs/server-ui": "latest",
+    "@serenityjs/typescript-config": "latest",
+    "@serenityjs/world": "latest"
+  }
 }

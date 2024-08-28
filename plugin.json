@@ -1,9 +1,0 @@
-{
-  "name": "sample-plugin",
-  "version": "1.0.0",
-  "mode": "development",
-  "color": "blue",
-  "entry": "dist/src/index.js",
-  "node": true,
-  "typescript": true
-}

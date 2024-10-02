@@ -27,20 +27,20 @@ export class CustomGenerator extends TerrainGenerator {
     for (let x = 0; x < 16; x++) {
       for (let z = 0; z < 16; z++) {
         // Set the bedrock layer
-        chunk.setPermutation(x, 0, z, this.bedrock);
+        chunk.setPermutation({x, y: 0, z}, this.bedrock);
 
         // Set the stone layer
-        chunk.setPermutation(x, 1, z, this.stone);
-        chunk.setPermutation(x, 2, z, this.stone);
-        chunk.setPermutation(x, 3, z, this.stone);
+        chunk.setPermutation({x, y: 1, z}, this.stone);
+        chunk.setPermutation({x, y: 2, z}, this.stone);
+        chunk.setPermutation({x, y: 3, z}, this.stone);
 
         // Set the dirt layer
-        chunk.setPermutation(x, 4, z, this.dirt);
-        chunk.setPermutation(x, 5, z, this.dirt);
+        chunk.setPermutation({x, y: 4, z}, this.dirt);
+        chunk.setPermutation({x, y: 5, z}, this.dirt);
 
 
         // Set the grass layer
-        chunk.setPermutation(x, 6, z, this.grass);
+        chunk.setPermutation({x, y: 6, z}, this.grass);
       }
     }
 

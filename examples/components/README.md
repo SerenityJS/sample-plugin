@@ -23,3 +23,11 @@ Healthbar component, this creates a healthbar that will visualize the entity's c
     <img src="./public/healthbar.png" alt="Logo" />
   </a>
 </p>
+
+Slapper component, this creates a custom component that allows executes commands at the player when interacted. This component will also read/write the component data to the LevelDB for storage!
+**[Explore Code](./entity-slapper.ts)**  
+<p align="center">
+  <a href="./entity-slapper.ts">
+    <img src="./public/entity-slapper.png" alt="Logo" />
+  </a>
+</p>

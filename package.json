@@ -4,13 +4,18 @@
   "author": "SerenityJS",
   "description": "Sample plugin provides a basic configuration for plugin usage in the SerenityJS software.",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "license": "MIT",
   "scripts": {
     "build": "tsup"
   },
   "tsup": {
-    "entry": ["src/index.ts"],
-    "format": ["cjs"],
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs"
+    ],
     "dts": true,
     "clean": true,
     "minify": true
@@ -20,25 +25,11 @@
     "Example"
   ],
   "peerDependencies": {
-    "@serenityjs/binarystream": "*",
-    "@serenityjs/block": "*",
-    "@serenityjs/command": "*",
-    "@serenityjs/data": "*",
-    "@serenityjs/emitter": "*",
-    "@serenityjs/entity": "*",
-    "@serenityjs/item": "*",
-    "@serenityjs/logger": "*",
-    "@serenityjs/nbt": "*",
-    "@serenityjs/network": "*",
-    "@serenityjs/plugins": "*",
-    "@serenityjs/protocol": "*",
-    "@serenityjs/raknet": "*",
-    "@serenityjs/serenity": "*",
-    "@serenityjs/server-ui": "*",
-    "@serenityjs/typescript-config": "*",
-    "@serenityjs/world": "*"
+    "@serenityjs/core": "*",
+    "@serenityjs/plugins": "*"
   },
   "devDependencies": {
-    "tsup": "^8.2.4"
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
   }
 }

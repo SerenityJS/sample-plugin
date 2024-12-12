@@ -17,9 +17,9 @@ class SamplePlugin extends Plugin {
 	// The api plugin is then added to the server workspace, and other plugins can interact with it.
 	// Api plugins are used for creating complex features that require multiple plugins to interact with each other.
 	// Some examples of api plugins are the land claim plugin, the economy plugin, and the permission plugin.
-	public readonly type = PluginType.Addon;
+	type = PluginType.Addon;
 
-	public constructor() {
+	constructor() {
 		// Super assigns the name and version of the plugin.
 		// There is an additional parameter that can be passed to the super constructor,
 		// but since this is a class-based plugin, it is not required, as the properties & methods can be directly created in the class.
@@ -29,20 +29,20 @@ class SamplePlugin extends Plugin {
 	// This method is called right after the plugin is loaded from the file system.
 	// Once this method is called, `this.serenity` & `this.pipeline` will be in scope.
 	// This method should be used when registering any custom features; such as commands, traits, generators, providers, blocks, etc.
-	public onInitialize(): void {
+	onInitialize() {
 		this.logger.info("Sample plugin initialized!");
 	}
 
 	// This method is called once all plugins have been initialized and all worlds have been loaded.
 	// This method should be used to start any services and tasks that the plugin requires.
-	public onStartUp(): void {
+	onStartUp() {
 		this.logger.info("Sample plugin started up!");
 	}
 
 	// This method is called when the server is shutting down, but is called before the worlds and raknet server are shut down.
 	// This method should be used to stop any services and tasks that the plugin started up.
 	// This also should be used to clean up any resources that the plugin created via the `onInitialize` method.
-	public onShutDown(): void {
+	onShutDown() {
 		this.logger.info("Sample plugin shut down!");
 	}
 }

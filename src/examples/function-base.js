@@ -2,15 +2,24 @@ import { Plugin, PluginType } from "@serenityjs/plugins";
 
 // This is a sample plugin that has a function-based implementation.
 
-function onInitialize(plugin: Plugin) {
+/**
+ * @param {Plugin} plugin 
+ */
+function onInitialize(plugin) {
   plugin.logger.info("Sample plugin initialized!");
 }
 
-function onStartUp(plugin: Plugin) {
+/**
+ * @param {Plugin} plugin 
+ */
+function onStartUp(plugin) {
   plugin.logger.info("Sample plugin started up!");
 }
 
-function onShutDown(plugin: Plugin) {
+/**
+ * @param {Plugin} plugin 
+ */
+function onShutDown(plugin) {
   plugin.logger.info("Sample plugin shut down!");
 }
 

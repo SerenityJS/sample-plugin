@@ -15,13 +15,9 @@ function onShutDown(plugin: Plugin) {
 }
 
 // Export a new instance of the Plugin class with the name and version of the plugin.
-export default new Plugin(
-  "sample-plugin",
-  "1.0.0",
-  {
-    type: PluginType.Addon,
-    onInitialize,
-    onStartUp,
-    onShutDown
-  }
-)
+export default new Plugin("sample-plugin", "1.0.0", {
+  type: PluginType.Addon,
+  onInitialize,
+  onStartUp,
+  onShutDown
+});

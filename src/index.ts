@@ -1,11 +1,11 @@
-import { Plugin, PluginType } from "@serenityjs/plugins";
+import { Plugin, PluginEvents, PluginType } from "@serenityjs/plugins";
 
 // This is a sample plugin that has a class-based implementation.
 // In Serenity, there are two types of plugins: class-based and function-based.
 // Class-based plugins are more flexible and can be used to create more complex plugins.
 // Function-based plugins are simpler and are used for creating simple plugins.
 
-class SamplePlugin extends Plugin {
+class SamplePlugin extends Plugin implements PluginEvents {
   // Type declares the type of the plugin.
 
   // An addon plugin is bundled to the most simplistic form, without any type declarations.

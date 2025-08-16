@@ -7,26 +7,22 @@
   "module": "dist/index.mjs",
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
-  },
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "format": [
-      "cjs"
-    ],
-    "dts": true,
-    "clean": true,
-    "minify": true
+    "build": "tsup",
+    "watch": "tsup --watch"
   },
   "keywords": [
     "Sample",
-    "Example"
+    "Example",
+    "SerenityJS",
+    "Plugin",
+    "TypeScript"
   ],
   "peerDependencies": {
     "@serenityjs/core": "*",
-    "@serenityjs/plugins": "*"
+    "@serenityjs/plugins": "*",
+    "@serenityjs/protocol": "*",
+    "@serenityjs/logger": "*",
+    "@serenityjs/nbt": "*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

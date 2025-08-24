@@ -10,13 +10,7 @@
     "build": "tsup",
     "watch": "tsup --watch"
   },
-  "keywords": [
-    "Sample",
-    "Example",
-    "SerenityJS",
-    "Plugin",
-    "TypeScript"
-  ],
+  "keywords": [],
   "peerDependencies": {
     "@serenityjs/core": "*",
     "@serenityjs/plugins": "*",

@@ -1,4 +1,4 @@
-import { Plugin, PluginType } from "@serenityjs/plugins";
+import { Plugin, PluginPriority } from "@serenityjs/plugins";
 
 // This is a sample plugin that has a function-based implementation.
 
@@ -16,7 +16,7 @@ function onShutDown(plugin: Plugin) {
 
 // Export a new instance of the Plugin class with the name and version of the plugin.
 export default new Plugin("sample-plugin", "1.0.0", {
-  type: PluginType.Addon,
+  priority: PluginPriority.Low,
   onInitialize,
   onStartUp,
   onShutDown

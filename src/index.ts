@@ -1,4 +1,4 @@
-import { Plugin, PluginEvents, PluginType } from "@serenityjs/plugins";
+import { Plugin, PluginEvents, PluginPriority } from "@serenityjs/plugins";
 
 // This is a sample plugin that has a class-based implementation.
 // In Serenity, there are two types of plugins: class-based and function-based.
@@ -6,18 +6,11 @@ import { Plugin, PluginEvents, PluginType } from "@serenityjs/plugins";
 // Function-based plugins are simpler and are used for creating simple plugins.
 
 class SamplePlugin extends Plugin implements PluginEvents {
-  // Type declares the type of the plugin.
+  // Declare the priorty of the plugin.
 
-  // An addon plugin is bundled to the most simplistic form, without any type declarations.
-  // Addon plugins are extracted at runtime and are destroyed after the server is shut down.
-  // Addon plugins are used for creating simple commands, events, and other features that don't require a lot of complexity.
-
-  // An api plugin is a plugin that exposes an api to allow other plugins to interact with.
-  // Api plugins are extracted once, and the source file is deleted after the extraction.
-  // The api plugin is then added to the server workspace, and other plugins can interact with it.
-  // Api plugins are used for creating complex features that require multiple plugins to interact with each other.
-  // Some examples of api plugins are the land claim plugin, the economy plugin, and the permission plugin.
-  public readonly type = PluginType.Addon;
+  // Depending on the priority, plugins will be initialized in a specific order.
+  // Plugins with a higher priority will be initialized first.
+  public readonly priority: PluginPriority = PluginPriority.Low;
 
   public constructor() {
     // Super assigns the name and version of the plugin.

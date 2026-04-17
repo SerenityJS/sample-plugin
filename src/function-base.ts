@@ -6,12 +6,14 @@ function onInitialize(plugin: Plugin) {
   plugin.logger.info("Sample plugin initialized!");
 }
 
-function onStartUp(plugin: Plugin) {
+function onStartUp(plugin: Plugin): Promise<void> {
   plugin.logger.info("Sample plugin started up!");
+  return Promise.resolve();
 }
 
-function onShutDown(plugin: Plugin) {
+function onShutDown(plugin: Plugin): Promise<void> {
   plugin.logger.info("Sample plugin shut down!");
+  return Promise.resolve();
 }
 
 // Export a new instance of the Plugin class with the name and version of the plugin.

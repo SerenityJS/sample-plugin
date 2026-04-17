@@ -28,15 +28,17 @@ class SamplePlugin extends Plugin implements PluginEvents {
 
   // This method is called once all plugins have been initialized and all worlds have been loaded.
   // This method should be used to start any services and tasks that the plugin requires.
-  public onStartUp(): void {
+  public onStartUp(): Promise<void> {
     this.logger.info("Sample plugin started up!");
+    return Promise.resolve();
   }
 
   // This method is called when the server is shutting down, but is called before the worlds and raknet server are shut down.
   // This method should be used to stop any services and tasks that the plugin started up.
   // This also should be used to clean up any resources that the plugin created via the `onInitialize` method.
-  public onShutDown(): void {
+  public onShutDown(): Promise<void> {
     this.logger.info("Sample plugin shut down!");
+    return Promise.resolve();
   }
 }
 
